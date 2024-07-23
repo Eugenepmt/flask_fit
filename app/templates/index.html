@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<p style="text-align: center;">
+    {% extends "base.html" %} 
+<link rel="stylesheet" type="text/css" href="static/style.css">
+
+{% block content %}
+<p class="index_text">Выберите тип изделия и операцию изготовления</p>
+<body>   
+    <table class="tab">
+        <tr><td><img class="img_menu" src="\static\GN_1.png" alt="Picture"/></td>
+            <td><button class="href_btn_co" onclick="window.location.href='/lit_check?i=5'">Литье гайки накидной (ГН)</button>
+                <br>
+                <button class="href_btn_co" onclick="window.location.href='/thread_check?i=2'">Нарезание резьбы ГН</button>
+            </td>
+        </tr>
+        
+        <tr><td><img class="img_menu" src="\static\UO_1.png" alt="Picture"/></td>
+            <td><button class="href_btn_co" onclick="window.location.href='/seal_check?i=1'">Вулканизация уплотнителя УО</button></td>
+        </tr>
+        
+        <tr><td><img class="img_menu" src="\static\OK_1.png" alt="Picture"/></td>
+            <td><button class="href_btn_co" onclick="window.location.href='/lit_check?i=7'">Литье оконцевателя</button></td>
+            <td></td>
+        </tr>
+        <tr><td><img class="img_menu" src="\static\CO_1.png" alt="Picture"/></td>
+            <td><button class="href_btn_co" onclick="window.location.href='/lit_check?i=2'">Литье корпуса РКв</button>
+                <br>
+                <button class="href_btn_co" onclick="window.location.href='/thread_check?i=1'">Нарезание резьбы РКв</button>
+                <br>
+                <button class="href_btn_co" onclick="window.location.href='/lit_check?i=1'">Литье корпуса РКн</button>
+                <br>
+                <button class="href_btn_co" onclick="window.location.href='/lit_check?i=3'">Литье корпуса МТ</button>
+                <br>
+                <button class="href_btn_co" onclick="window.location.href='/lit_check?i=4'">Литье корпуса МСМ</button>
+            </td>
+        </tr>
+        <tr><td><img class="img_menu" src="\static\UZ_1.png" alt="Picture"/></td>
+            <td><button class="href_btn_co" onclick="window.location.href='/seal_check?i=2'">Вулканизация уплотнителя УЗ</button></td>
+        </tr>
+        <tr><td><img class="img_menu" src="\static\GZ_1.png" alt="Picture"/></td>
+            <td><button class="href_btn_co" onclick="window.location.href='/lit_check?i=6'">Литье гайки заземления</button></td>
+        </tr>  
+    </table>
+{% endblock %}
+</body>
+</html>

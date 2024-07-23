@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script>
+		document.addEventListener('DOMContentLoaded', (event) => {
+			const form = document.querySelector('form');
+			form.onsubmit = function() {
+			  const submitButton = this.querySelector('input[type="submit"]');
+			  submitButton.disabled = true;
+			  submitButton.value = "Отправлено";
+			};
+		  });
+		  </script>
+	</head>
+<p>{% block content %}</p>
+<form action="" method="post" novalidate="">{{ form.hidden_tag() }}
+	<p><img class="img_scheme" src="/static/RKV_s.png" alt="Picture" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+		<body>
+		<span style="font-size: 30px;">1. Выберите деталь для контроля:</span>
+		<br>
+		<br>
+		<span style="font-size: 30px;">{{ form.part }} </span>
+		<br>
+		<br>
+		<span style="font-size: 30px;">2. Отметьте галочкой условие, если оно выполняется:</span>
+		<table class="tablit">
+			<tr><td>Деталь накручивается на проходной калибр</td><td>{{ form.prohod }}</td></tr>
+			<tr><td>Деталь не накручивается на непроходной калибр</td><td>{{ form.neprohod }}</td></tr>
+		</table>
+		<div style="clear:both"></div>
+		<hr>
+		<div class="footer" style="clear:both">{{ form.submit }}</div>
+		</body>
+</form>
+<p>{% endblock %}</p>
+</html>

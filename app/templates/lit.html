@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script>
+		document.addEventListener('DOMContentLoaded', (event) => {
+			const form = document.querySelector('form');
+			form.onsubmit = function() {
+			  const submitButton = this.querySelector('input[type="submit"]');
+			  submitButton.disabled = true;
+			  submitButton.value = "Отправлено";
+			};
+		  });
+		  </script>
+	</head>
+<p>{% block content %}</p>
+<form action="" method="post" novalidate="">{{ form.hidden_tag() }}
+	<p><img class="img_scheme" src="{{ lit }}" alt="Picture" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+		<body>
+			<span style="font-size: 30px;">1. Выберите деталь для контроля:</span>
+			<br>
+			<br>
+			<span style="font-size: 30px;">{{ form.part }} </span>
+			<br>
+			<br>
+			<span style="font-size: 30px;">2. Отметьте галочками отсутствующие дефекты:</span>
+			<table class="tablit">
+				<tr><td>Переливы отсутствуют</td><td>{{ form.pereliv }}</td></tr>
+				<tr><td>Флажки отсутствуют</td><td>{{ form.flag }}</td></tr>
+				<tr><td>Свищи отсутствуют</td><td>{{ form.svish }}</td></tr>
+				<tr><td>Непроливы отсутствуют</td><td>{{ form.neproliv }}</td></tr>
+				<tr><td>Недоливы отсутствуют</td><td>{{ form.nedoliv }}</td></tr>
+			</table>
+		<div style="clear:both"></div>
+		<hr>
+		<div class="footer" style="clear:both">{{ form.submit }}</div>
+		</body>
+</form>
+<p>{% endblock %}</p>
+</html>
